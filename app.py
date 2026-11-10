@@ -189,6 +189,7 @@ class Processor(threading.Thread):
         try:
             app.set_status("Загрузка нейросети (при первом запуске — скачивание)...")
             import torch
+            import torchvision  # noqa: F401  регистрирует операторы (nms) в собранном exe
             from ultralytics import YOLO
 
             device = 0 if torch.cuda.is_available() else "cpu"

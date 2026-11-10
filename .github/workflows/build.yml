@@ -41,7 +41,7 @@ jobs:
       - name: Build exe
         run: >
           pyinstaller --noconfirm --windowed --name VehicleCounter
-          --collect-all ultralytics --hidden-import lap app.py
+          --collect-all ultralytics --collect-all torchvision --hidden-import lap app.py
 
       - name: Add models and docs
         run: |

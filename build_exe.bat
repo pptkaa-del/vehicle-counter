@@ -4,7 +4,7 @@ cd /d "%~dp0"
 call venv\Scripts\activate
 pip install pyinstaller
 pyinstaller --noconfirm --windowed --name VehicleCounter ^
-  --collect-all ultralytics --hidden-import lap app.py
+  --collect-all ultralytics --collect-all torchvision --hidden-import lap app.py
 copy /y yolo11s.pt dist\VehicleCounter\ >nul
 copy /y yolo11n.pt dist\VehicleCounter\ >nul
 echo.
